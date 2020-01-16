@@ -10,6 +10,6 @@ phases:
 artifacts:
   files:
     - target/hello-world.war
-    - .ebextensions/**/*
-  base-directory: 'target'
+    #- .ebextensions/**/*
+  #base-directory: 'target'
   discard-paths: yes
