@@ -12,3 +12,4 @@ artifacts:
     - target/hello-world.war
     - .ebextensions/**/*
   base-directory: 'target'
+  discard-paths: yes
