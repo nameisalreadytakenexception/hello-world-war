@@ -5,7 +5,7 @@ phases:
       java: corretto8
   post_build:
     commands:
-      - mvn install
+      - mvn install && mvn package
       - mv target/hello-world-war-1.0.0.war target/hello-world.war
 artifacts:
   files:
