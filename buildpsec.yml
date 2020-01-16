@@ -6,9 +6,9 @@ phases:
   post_build:
     commands:
       - mvn install
-      - mv target/hello-world-war-1.0.0.war hello-world.war
+      - mv target/hello-world-war-1.0.0.war target/hello-world.war
 artifacts:
   files:
-    - hello-world.war
+    - target/hello-world.war
     - .ebextensions/**/*
-  base-directory: 'hello-world-war'
+  base-directory: 'target'
