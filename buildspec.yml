@@ -2,14 +2,14 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto8
+      java: openjdk-8
   post_build:
     commands:
       - mvn install && mvn package
-      - mv target/hello-world-war-1.0.0.war target/hello-world.war
+      - mv target/hello-world-war-1.0.0.war target/hello-world-1.war
 artifacts:
   files:
-    - target/hello-world.war
+    - target/hello-world-1.war
     #- .ebextensions/**/*
   #base-directory: 'target'
   discard-paths: yes
