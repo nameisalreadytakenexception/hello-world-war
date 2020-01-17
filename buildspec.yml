@@ -5,7 +5,7 @@ phases:
       java: corretto8	
   post_build:
     commands:
-      - unzip *.zip
+      #- unzip *.zip
       - mvn install && mvn package
       - mv target/hello-world-war-1.0.0.war target/hello-world-1.war
 artifacts:
