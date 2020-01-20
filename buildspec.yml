@@ -7,13 +7,14 @@ phases:
     commands:
       #- unzip *.zip
       - mvn install && mvn package
-      - mv target/hello-world-war-1.0.0.war target/hello-world.war
-      - cd target
-      - zip -r hello.zip *
+      #- mv target/hello-world-war-1.0.0.war target/hello-world.war
+      #- cd target
+      #- zip -r hello.zip *
 artifacts:
   files:
-    - target/hello.zip
+    #- target/hello.zip
     #- target/hello-world.war
+    - target/hello-world-war-1.0.0
     #- .ebextensions/**/*
   #base-directory: 'target'
   discard-paths: yes
