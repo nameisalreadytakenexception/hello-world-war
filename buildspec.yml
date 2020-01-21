@@ -7,8 +7,8 @@ phases:
     commands:
       - mvn install && mvn package
       #- mv target/hello-world-war-1.0.0.war target/ROOT.war
-      - rm target/hello-world-war-1.0.0.war
       - cd target
+      - rm -rf * !(hello-world-war-1.0.0)     
       - jar -cvf hello.war .
 artifacts:
   files:
