@@ -7,13 +7,10 @@ phases:
     commands:
       - mvn install && mvn package
       - mv target/hello-world-war-1.0.0.war target/ROOT.war
-      #- cd target/hello-world-war-1.0.0    
-      #- jar -cvf hello.war .
 artifacts:
   files:
-    #- hello.war
-    - target/ROOT.war
-    #- target/hello-world-war-1.0.0
-    - .ebextensions/**/*
+    #- target/ROOT.war
+    - target/hello-world-war-1.0.0/*
+    #- .ebextensions/**/*
   #base-directory: 'target'
   discard-paths: yes
