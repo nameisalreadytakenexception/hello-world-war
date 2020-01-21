@@ -6,14 +6,14 @@ phases:
   post_build:
     commands:
       - mvn install && mvn package
-      #- mv target/hello-world-war-1.0.0 target/ROOT.war
-      - cd target/hello-world-war-1.0.0    
-      - jar -cvf hello.war .
+      - mv target/hello-world-war-1.0.0 target/ROOT.war
+      #- cd target/hello-world-war-1.0.0    
+      #- jar -cvf hello.war .
 artifacts:
   files:
-    - hello.war
-    #- ROOT.war
+    #- hello.war
+    - ROOT.war
     #- target/hello-world-war-1.0.0
     #- .ebextensions/**/*
-  base-directory: 'target/hello-world-war-1.0.0'
+  #base-directory: 'target/hello-world-war-1.0.0'
   discard-paths: yes
