@@ -6,13 +6,13 @@ phases:
   post_build:
     commands:
       - mvn package #install #&& mvn package
-      - mv target/hello-world-war-1.0.0.war target/hello-world-v1.war
+      - mv target/hello-world-war-1.0.0.war target/ROOT.war
       #- cd target
       #- zip -r hello.zip META-INF WEB-INF index.jsp
 artifacts:
   files:
     #- target/hello.zip
-    - hello-world-v1.war
+    - ROOT.war
     #- target/hello-world-war-1.0.0
     #- .ebextensions/**/*
   base-directory: 'target'
