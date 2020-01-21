@@ -5,14 +5,15 @@ phases:
       java: corretto8	
   post_build:
     commands:
-      - mvn package #install #&& mvn package
+      - mvn install && mvn package
       #- mv target/hello-world-war-1.0.0.war target/ROOT.war
+      - rm target/hello-world-war-1.0.0.war
       - cd target
-      - jar -cvf hello.war META-INF WEB-INF index.jsp
+      - jar -cvf hello.war .
 artifacts:
   files:
     - hello.war
-    - ROOT.war
+    #- ROOT.war
     #- target/hello-world-war-1.0.0
     #- .ebextensions/**/*
   base-directory: 'target'
