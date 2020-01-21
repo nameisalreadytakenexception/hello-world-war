@@ -5,8 +5,7 @@ phases:
       java: corretto8	
   post_build:
     commands:
-      #- unzip *.zip
-      - mvn install && mvn package
+      - mvn install #&& mvn package
       - mv target/hello-world-war-1.0.0.war target/hello-world.war
       #- cd target
       #- zip -r hello.zip META-INF WEB-INF index.jsp
