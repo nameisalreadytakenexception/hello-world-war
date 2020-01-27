@@ -61,24 +61,20 @@ stages:
       runOnce:
         deploy:
           steps:
-          - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: tomcat549'
+          - task: AzureRmWebAppDeployment@4
             inputs:
               ConnectionType: 'AzureRM'
               azureSubscription: 'Azure для учащихся (f3ef0eca-ea60-461f-a719-b8ee67022bcd)'
               appType: 'webAppLinux'
               WebAppName: 'tomcat549'
-              deployToSlotOrASE: true
-              ResourceGroupName: 'web_app_resource_group'
-              SlotName: 'production'
-              packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+              packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
               RuntimeStack: 'TOMCAT|8.5-java11'
               ScriptType: 'Inline Script'
               InlineScript: |
                 pwd
-                ls $(System.DefaultWorkingDirectory)/**/
+                ls $(System.DefaultWorkingDirectory)/**/            
                 ls $(System.DefaultWorkingDirectory)/
-                        appType: 'webAppLinux'
-                        appName: 'tomcat549'
-                        package: '$(Pipeline.Workspace)/drop/*.war'
-                        runtimeStack: 'TOMCAT|8.5-java11'
+                                  appType: 'webAppLinux'
+                                  appName: 'tomcat549'
+                                  package: '$(Pipeline.Workspace)/drop/*.war'
+                                  runtimeStack: 'TOMCAT|8.5-java11'
