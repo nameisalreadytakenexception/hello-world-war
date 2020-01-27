@@ -34,7 +34,13 @@ stages:
       displayName: 'Maven Package'
       inputs:
         mavenPomFile: 'pom.xml'
-
+    - task: CmdLine@2
+      inputs:
+      script: |
+        pwd
+        ls
+        mv $(System.DefaultWorkingDirectory)/target/hello-world-war-1.0.0.war $(System.DefaultWorkingDirectory)/target/ROOT.war'
+    
     - task: CopyFiles@2
       displayName: 'Copy Files to artifact staging directory'
       inputs:
