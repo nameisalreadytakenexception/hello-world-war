@@ -64,7 +64,8 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Azure Web App Deploy: tomcat549'
             inputs:
-              azureSubscription: $(azureSubscription)
-              appType: webAppLinux
-              appName: $(webAppName)
+              azureSubscription: 'Azure для учащихся (f3ef0eca-ea60-461f-a719-b8ee67022bcd)'
+              appType: 'webAppLinux'
+              appName: 'tomcat549'
               package: '$(Pipeline.Workspace)/drop/*.war'
+              runtimeStack: 'TOMCAT|8.5-java11'
