@@ -39,9 +39,10 @@ stages:
     - task: CopyFiles@2
       displayName: 'Copy Files to artifact staging directory'
       inputs:
-        SourceFolder: '$(System.DefaultWorkingDirectory)'
-        Contents: '**/target/*.?(war|jar)'
+        SourceFolder: 'target'
+        Contents: '*.war'
         TargetFolder: $(Build.ArtifactStagingDirectory)
+        OverWrite: true
 
     - upload: $(Build.ArtifactStagingDirectory)
       artifact: drop
@@ -66,4 +67,4 @@ stages:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
               appName: $(webAppName)
-              package: '$(Pipeline.Workspace)/drop/**/target/*.?(war|jar)'
+              package: '$(Pipeline.Workspace)/drop/*.war'
